@@ -1,0 +1,323 @@
+/* Estilos generales */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    background-color: #e7e3e3;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 12px;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    transform: translate3d(0,0,0);
+    width: 100%;
+}
+
+/* Contenedor del logo */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #2ce4d4 0%, #24d67d 100%);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Personalización de headers */
+.ui-header {
+    background: linear-gradient(135deg, #25d4d4 0%, #2aeca2 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.ui-header h1 {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.ui-header .ui-btn {
+    background: rgba(255,255,255,0.2) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    color: white !important;
+}
+
+/* Footer personalizado */
+.ui-footer {
+    background: linear-gradient(135deg, #37cabe 0%, #31f762 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.ui-footer h4 {
+    color: white !important;
+    margin: 10px 0;
+}
+
+/* Botones personalizados */
+.ui-btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
+    transition: all 0.3s ease !important;
+    background: linear-gradient(135deg, #47e5eb 0%, #4ba24b 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.ui-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* Contenedor principal de la aplicación */
+.ui-page {
+    background: #E4E4E4;
+    min-height: 100vh;
+}
+
+.ui-content {
+    background: transparent;
+    padding: 15px;
+}
+
+/* Secciones principales */
+.welcome-section, .search-section, .list-section {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.welcome-section h2, .search-section h2, .list-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Botones de navegación */
+.navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Resultados y tablas */
+.result-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.restaurant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.restaurant-table th {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.restaurant-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ecf0f1;
+    color: #2c3e50;
+}
+
+.restaurant-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mensajes de estado */
+.welcome-message {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #c51a07 0%, #ce1b07 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.loading-message {
+    background: linear-gradient(135deg, #74ce0d 0%, #a1e622 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Caja de resumen */
+.summary-box {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Sección CRUD */
+.crud-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.crud-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #667eea;
+}
+
+.crud-card h3, .crud-card h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Botones CRUD */
+.crud-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin: 5px !important;
+}
+
+.crud-btn:hover {
+    transform: translateY(-1px) !important;
+}
+
+.crud-btn-small {
+    background: linear-gradient(135deg, #124ef3 0%, #22e663 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin: 2px !important;
+}
+
+.crud-btn-small-delete {
+    background: linear-gradient(135deg, #ca24a6 0%, #bb2bc0 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin: 2px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ui-content {
+        padding: 10px;
+    }
+    
+    .welcome-section, .search-section, .list-section, .crud-section, .crud-card {
+        padding: 15px;
+    }
+    
+    .restaurant-table {
+        font-size: 12px;
+    }
+    
+    .restaurant-table th,
+    .restaurant-table td {
+        padding: 8px 6px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.welcome-section, .search-section, .list-section, .crud-section {
+    animation: fadeIn 0.5s ease-out;
+}

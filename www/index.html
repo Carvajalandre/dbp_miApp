@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- Content Security Policy actualizada con tu URL de MockAPI -->
+        <meta http-equiv="Content-Security-Policy" 
+              content="default-src 'self' https://685561e46a6ef0ed663253a9.mockapi.io data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; 
+                       style-src 'self' 'unsafe-inline'; 
+                       media-src *; 
+                       img-src 'self' data: content:; 
+                       script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
+                       connect-src 'self' https://685561e46a6ef0ed663253a9.mockapi.io">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta name="color-scheme" content="light dark">
+        
+        <!-- Archivos CSS -->
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        
+        <title>Restaurant App</title>
+    </head>
+    <body>
+        <!-- Página Principal -->
+        <div data-role="page" id="pageone">
+            <div data-role="header" data-position="fixed">
+                <h1>Restaurant App</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="welcome-section">
+                    <div class="logo-container">
+                        <img src="img/logo.png" alt="Logo" class="logo" style="max-width: 150px; margin: 20px auto; display: block;">
+                    </div>
+                    <h2>Bienvenido a Restaurant App</h2>
+                    <p>Tu aplicación móvil para gestionar restaurantes</p>
+                </div>
+
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#pagetwo" data-transition="slide">Buscar Usuario</a></li>
+                    <li><a href="#pagethree" data-transition="slide">Ver Restaurantes</a></li>
+                    <li><a href="#pagefour" data-transition="slide">Gestión de Usuarios</a></li>
+                    <li><a href="#pagefive" data-transition="slide">Gestión de Restaurantes</a></li>
+                </ul>
+
+                <div data-role="collapsible">
+                    <h3>Funcionalidades</h3>
+                    <ul data-role="listview">
+                        <li>Buscar usuarios por nombre</li>
+                        <li>Ver lista de restaurantes</li>
+                        <li>Gestionar usuarios (CRUD completo)</li>
+                        <li>Gestionar restaurantes (CRUD completo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Restaurant App v1.0</h4>
+            </div>
+        </div>
+
+        <!-- Página Buscar Usuario -->
+        <div data-role="page" id="pagetwo">
+            <div data-role="header" data-add-back-btn="true">
+                <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Inicio</a>
+                <h1>Buscar Usuario</h1>
+            </div>
+
+            <div data-role="content">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Formulario de Búsqueda</h3>
+                    <p>Ingresa el nombre del usuario que deseas buscar</p>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtNombre">Nombre del Usuario:</label>
+                        <input type="text" id="txtNombre" placeholder="Ej: Juan Pérez">
+                    </div>
+                    
+                    <button type="button" id="btnBuscar" data-theme="b">Buscar Usuario</button>
+                    
+                    <div id="divResultado" class="result-section" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Búsqueda de Usuarios</h4>
+            </div>
+        </div>
+
+        <!-- Página Lista Restaurantes -->
+        <div data-role="page" id="pagethree">
+            <div data-role="header" data-add-back-btn="true">
+                <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Inicio</a>
+                <h1>Lista de Restaurantes</h1>
+            </div>
+
+            <div data-role="content">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Cargar Restaurantes</h3>
+                    <p>Lista de todos los restaurantes registrados</p>
+                    
+                    <button type="button" id="btnCargar" data-theme="e">Cargar Restaurantes</button>
+                    
+                    <div id="divLista" class="list-result-section" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Lista de Restaurantes</h4>
+            </div>
+        </div>
+
+        <!-- Página Gestión de Usuarios -->
+        <div data-role="page" id="pagefour">
+            <div data-role="header" data-add-back-btn="true">
+                <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Inicio</a>
+                <h1>Gestión de Usuarios</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="crud-section">
+                    <h2>Gestión Completa de Usuarios</h2>
+                    <p>Crear, leer, actualizar y eliminar usuarios</p>
+                </div>
+
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Formulario de Usuario</h3>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtUsuarioNombre">Nombre:</label>
+                        <input type="text" id="txtUsuarioNombre" placeholder="Nombre completo">
+                    </div>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtUsuarioEmail">Email:</label>
+                        <input type="email" id="txtUsuarioEmail" placeholder="correo@ejemplo.com">
+                    </div>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtUsuarioPassword">Contraseña:</label>
+                        <input type="password" id="txtUsuarioPassword" placeholder="Contraseña">
+                    </div>
+                    
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <button type="button" id="btnCrearUsuario" data-theme="b">Crear Usuario</button>
+                        </div>
+                        <div class="ui-block-b">
+                            <button type="button" id="btnActualizarUsuario" data-theme="a" style="display:none;">Actualizar Usuario</button>
+                        </div>
+                    </div>
+                    <button type="button" id="btnEliminarUsuario" data-theme="c" style="display:none;">Eliminar Usuario</button>
+                    <button type="button" id="btnLimpiarUsuario" data-theme="d">Limpiar Formulario</button>
+                    
+                    <div style="margin-top: 20px;">
+                        <button type="button" id="btnCargarUsuarios" data-theme="e">Cargar Lista de Usuarios</button>
+                        <ul id="divListaUsuarios" data-role="listview" data-inset="true" style="margin-top: 15px;">
+                            <!-- Lista dinámica de usuarios -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-role="collapsible">
+                    <h3>Instrucciones de Uso</h3>
+                    <ul data-role="listview">
+                        <li><strong>Crear:</strong> Llena los campos y presiona "Crear Usuario"</li>
+                        <li><strong>Seleccionar:</strong> Haz clic en "Editar" en la lista de usuarios</li>
+                        <li><strong>Actualizar:</strong> Selecciona un usuario, modifica los campos y presiona "Actualizar"</li>
+                        <li><strong>Eliminar:</strong> Selecciona un usuario y presiona "Eliminar"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Gestión de Usuarios</h4>
+            </div>
+        </div>
+
+        <!-- Página Gestión de Restaurantes -->
+        <div data-role="page" id="pagefive">
+            <div data-role="header" data-add-back-btn="true">
+                <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Inicio</a>
+                <h1>Gestión de Restaurantes</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="crud-section">
+                    <h2>Gestión Completa de Restaurantes</h2>
+                    <p>Crear, leer, actualizar y eliminar restaurantes</p>
+                </div>
+
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Formulario de Restaurante</h3>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtRestauranteNombre">Nombre del Restaurante:</label>
+                        <input type="text" id="txtRestauranteNombre" placeholder="Nombre del restaurante">
+                    </div>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtRestauranteDireccion">Dirección:</label>
+                        <input type="text" id="txtRestauranteDireccion" placeholder="Dirección completa">
+                    </div>
+                    
+                    <div class="ui-field-contain">
+                        <label for="txtRestauranteTelefono">Teléfono:</label>
+                        <input type="tel" id="txtRestauranteTelefono" placeholder="Número de teléfono">
+                    </div>
+                    
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <button type="button" id="btnCrearRestaurante" data-theme="b">Crear Restaurante</button>
+                        </div>
+                        <div class="ui-block-b">
+                            <button type="button" id="btnActualizarRestaurante" data-theme="a" style="display:none;">Actualizar Restaurante</button>
+                        </div>
+                    </div>
+                    <button type="button" id="btnEliminarRestaurante" data-theme="c" style="display:none;">Eliminar Restaurante</button>
+                    <button type="button" id="btnLimpiarRestaurante" data-theme="d">Limpiar Formulario</button>
+                    
+                    <div style="margin-top: 20px;">
+                        <button type="button" id="btnCargarRestaurantes" data-theme="e">Cargar Lista de Restaurantes</button>
+                        <ul id="divListaRestaurantes" data-role="listview" data-inset="true" style="margin-top: 15px;">
+                            <!-- Lista dinámica de restaurantes -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-role="collapsible">
+                    <h3>Instrucciones de Uso</h3>
+                    <ul data-role="listview">
+                        <li><strong>Crear:</strong> Llena los campos y presiona "Crear Restaurante"</li>
+                        <li><strong>Seleccionar:</strong> Haz clic en "Editar" en la lista de restaurantes</li>
+                        <li><strong>Actualizar:</strong> Selecciona un restaurante, modifica los campos y presiona "Actualizar"</li>
+                        <li><strong>Eliminar:</strong> Selecciona un restaurante y presiona "Eliminar"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h4>Gestión de Restaurantes</h4>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
